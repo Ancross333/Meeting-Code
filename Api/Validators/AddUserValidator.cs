@@ -1,13 +1,13 @@
-﻿using Api.Commands;
+﻿using Api.Requests;
 using FluentValidation;
 
 namespace Api.Validators
 {
-    public class AddUserValidator : AbstractValidator<AddUserCommand>
+    public class AddUserValidator : AbstractValidator<AddUserRequest>
     {
         public AddUserValidator() 
         {
-            RuleFor(x => x.Username)
+            RuleFor(x => x.Name)
                 .Must(BeNoMoreThan16Chatacters)
                 .WithMessage("Username cannot be more than 16 characters");
         }

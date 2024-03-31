@@ -17,6 +17,7 @@ namespace Db
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<User>().HasKey(x => x.Id);
+            modelBuilder.Entity<UserAddress>().HasKey(x => x.Id);
         }
 
         public DbSet<User> User { get; set; }
